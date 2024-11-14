@@ -1,8 +1,7 @@
 import {
     File,
-    Inbox,
+    UserCog,
     Send,
-    Receipt,
     KeySquare,
     PanelsTopLeft
 } from "lucide-react"
@@ -27,19 +26,14 @@ export const sidebarItems = [
         label: "Pages",
         items: [
             {
-                title: "Inbox",
-                path: `${basePath}/inbox`,
-                icon: Inbox
-            },
-            {
-                title: "Invoice",
+                title: "User Manaments",
                 path: "#",
-                icon: Receipt,
+                icon: UserCog,
                 subItems: [
-                    { title: "List", path: `${basePath}/invoice/list-preview` },
-                    { title: "View", path: `${basePath}/invoice/view` },
-                    { title: "Add", path: `${basePath}/invoice/add` },
-                    { title: "Edit", path: `${basePath}/invoice/edit` }
+                    { title: "All Users", path: `${basePath}/users` },
+                    { title: "Page 2", path: `${basePath}/unauthorized` },
+                    { title: "Page 3", path: `${basePath}/unauthorized` },
+                    { title: "Page 4", path: `${basePath}/unauthorized` }
                 ]
             },
             {

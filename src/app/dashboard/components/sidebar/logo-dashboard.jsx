@@ -1,28 +1,30 @@
 "use client"
 
 import * as React from "react"
-
+import Image from "next/image";  // Import Image from next/image
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
 
 export function LogoDashboard({ logo }) {
-    const [activeTeam] = React.useState(logo[0])
+    const [activeTeam] = React.useState(logo[0]);
 
     return (
         <SidebarMenu>
             <SidebarMenuItem>
-
                 <SidebarMenuButton
                     size="lg"
                     className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                 >
-                    <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                        <activeTeam.logo className="size-4" />
-                    </div>
+                    <Image
+                        src={activeTeam.logo}
+                        alt={activeTeam.name}
+                        width={40}
+                        height={40}
+                    />
                     <div className="grid flex-1 text-left text-sm leading-tight">
                         <span className="truncate font-semibold">{activeTeam.name}</span>
                     </div>
                 </SidebarMenuButton>
             </SidebarMenuItem>
         </SidebarMenu>
-    )
+    );
 }
