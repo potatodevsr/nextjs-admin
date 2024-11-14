@@ -1,5 +1,6 @@
 "use client"
 import { MoreHorizontal, ArrowUpDown, Edit, Trash } from "lucide-react"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 import { Button } from "@/components/ui/button"
 import {
@@ -11,18 +12,28 @@ import {
 
 export const columns = [
     {
-        accessorKey: "name",
-        header: ({ column }) => {
+        id: "number",
+        header: "No.",
+        cell: ({ row }) => row.index + 1, // Display row index, no sorting applied
+    },
+    {
+        accessorKey: "avatar",
+        header: "Profile",
+        cell: ({ row }) => {
+            const avatarUrl = row.getValue("avatar");
+            const name = row.getValue("name");
+
             return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-                >
-                    Name
-                    <ArrowUpDown className="ml-2 h-4 w-4" />
-                </Button>
-            )
-        }
+                <Avatar>
+                    <AvatarImage src={avatarUrl} alt={`${name}'s profile`} />
+                    <AvatarFallback>{name ? name.charAt(0) : "?"}</AvatarFallback>
+                </Avatar>
+            );
+        },
+    },
+    {
+        accessorKey: "name",
+        header: 'Name'
     },
     {
         accessorKey: "email",
@@ -32,16 +43,16 @@ export const columns = [
         accessorKey: "lastSeen",
         header: "Last seen",
         cell: ({ row }) => {
-            const date = new Date(row.getValue("lastSeen"))
-            const formatted = date.toLocaleDateString()
-            return <div className="font-medium">{formatted}</div>
+            const date = new Date(row.getValue("lastSeen"));
+            const formatted = date.toLocaleDateString();
+            return <div className="font-medium">{formatted}</div>;
         }
     },
     {
         id: "actions",
-        header: "actions",
+        header: "Actions",
         cell: ({ row }) => {
-            const user = row.original
+            const user = row.original;
 
             return (
                 <DropdownMenu>
@@ -53,17 +64,17 @@ export const columns = [
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                         <DropdownMenuItem
-                            onClick={() => router.push(`/dashboard/user/${data.id}`)}
+                            onClick={() => router.push(`/dashboard/user/${user.id}`)}
                         >
                             <Edit className="mr-2 h-4 w-4" /> Update
                         </DropdownMenuItem>
                         <DropdownMenuItem onClick={() => setOpen(true)}>
                             <Trash className="mr-2 h-4 w-4" /> Delete
                         </DropdownMenuItem>
-                        {/* <DropdownMenuItem>View payment details</DropdownMenuItem> */}
                     </DropdownMenuContent>
                 </DropdownMenu>
-            )
+            );
         }
     }
-]
+];
+

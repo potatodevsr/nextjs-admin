@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from "@/components/ui/sidebar"
-import { LogoDashboard } from "@/app/dashboard/components/sidebar/logo-dashboard";
+import { LogoDashboard } from "./logo-dashboard";
 import { sidebarItems } from "@/navigation/sidebar/sidebarItems"
 import SidebarFooterMenu from "./sidebarFooterMenu"
 import SidebarNavigation from "./sidebarNavigation"

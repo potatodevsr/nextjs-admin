@@ -2,10 +2,10 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import AppLogo from "@/components/app-logo";
+import { AppLogo } from "../components/app-logo";
 import { prompt } from '../components/fonts'
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { ArrowRightIcon } from 'lucide-react'
 
 export default function Home() {

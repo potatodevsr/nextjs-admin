@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { prompt } from './fonts'
 import Image from 'next/image'
-import { APP_NAME } from '@/lib/constants'
+import { APP_NAME } from '../lib/constants'
 
-export default function AppLogo() {
+export function AppLogo() {
     return (
         <Link href="/" className="flex-start">
             <div

@@ -41,7 +41,7 @@ export default function UserForm() {
         <Card className="mx-auto w-full">
             <CardHeader>
                 <CardTitle className="text-left text-2xl font-bold">
-                    Employee Information
+                    User Information
                 </CardTitle>
             </CardHeader>
             <CardContent>
@@ -124,7 +124,7 @@ export default function UserForm() {
                             name="gender"
                             render={({ field }) => (
                                 <FormItem className="space-y-3">
-                                    <FormLabel>Gender</FormLabel>
+                                    <FormLabel>IsAdmin?</FormLabel>
                                     <FormControl>
                                         <RadioGroup
                                             onValueChange={field.onChange}
@@ -135,19 +135,13 @@ export default function UserForm() {
                                                 <FormControl>
                                                     <RadioGroupItem value="male" />
                                                 </FormControl>
-                                                <FormLabel className="font-normal">Male</FormLabel>
+                                                <FormLabel className="font-normal">Yes</FormLabel>
                                             </FormItem>
                                             <FormItem className="flex items-center space-x-2">
                                                 <FormControl>
                                                     <RadioGroupItem value="female" />
                                                 </FormControl>
-                                                <FormLabel className="font-normal">Female</FormLabel>
-                                            </FormItem>
-                                            <FormItem className="flex items-center space-x-2">
-                                                <FormControl>
-                                                    <RadioGroupItem value="other" />
-                                                </FormControl>
-                                                <FormLabel className="font-normal">Other</FormLabel>
+                                                <FormLabel className="font-normal">No</FormLabel>
                                             </FormItem>
                                         </RadioGroup>
                                     </FormControl>

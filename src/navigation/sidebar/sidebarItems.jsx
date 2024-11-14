@@ -31,9 +31,9 @@ export const sidebarItems = [
                 icon: UserCog,
                 subItems: [
                     { title: "All Users", path: `${basePath}/users` },
-                    { title: "Page 2", path: `${basePath}/unauthorized` },
-                    { title: "Page 3", path: `${basePath}/unauthorized` },
-                    { title: "Page 4", path: `${basePath}/unauthorized` }
+                    { title: "Sub Page 2", path: `${basePath}/unauthorized` },
+                    { title: "Sub Page 3", path: `${basePath}/unauthorized` },
+                    { title: "Sub Page 4", path: `${basePath}/unauthorized` }
                 ]
             },
             {
