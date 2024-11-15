@@ -7,8 +7,10 @@ import { prompt } from '../components/fonts'
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 import { ArrowRightIcon } from 'lucide-react'
+// import { redirect } from "next/navigation"
 
 export default function Home() {
+  // redirect("/dashboard")
   useEffect(() => {
     const fetchData = async () => {
       try {

@@ -5,7 +5,7 @@ import { APP_NAME } from '../lib/constants'
 
 export function AppLogo() {
     return (
-        <Link href="/" className="flex-start">
+        <Link href="/login" className="flex-start">
             <div
                 className={`${prompt.className} flex flex-row items-end space-x-2`}
             >
