@@ -29,19 +29,10 @@ export const sidebarItems = [
                 path: "#",
                 icon: UserCog,
                 subItems: [
-                    { title: "All Users", path: `${basePath}/users` },
+                    { title: "All Users", path: `${basePath}/user-manaments/all-users` },
                     { title: "Sub Page 2", path: `${basePath}/unauthorized` },
                     { title: "Sub Page 3", path: `${basePath}/unauthorized` },
                     { title: "Sub Page 4", path: `${basePath}/unauthorized` }
-                ]
-            },
-            {
-                title: "News",
-                path: "#",
-                icon: Newspaper,
-                subItems: [
-                    { title: "News Category", path: `${basePath}/news/news-category` },
-                    { title: "News", path: `${basePath}/news/list-news` }
                 ]
             },
             {
