@@ -1,8 +1,7 @@
 import {
-    File,
     UserCog,
-    Send,
-    KeySquare,
+    MapPinHouse,
+    Newspaper,
     PanelsTopLeft
 } from "lucide-react"
 
@@ -37,23 +36,19 @@ export const sidebarItems = [
                 ]
             },
             {
-                title: "Auth",
+                title: "News",
                 path: "#",
-                icon: KeySquare,
+                icon: Newspaper,
                 subItems: [
-                    { title: "Unauthorized", path: `${basePath}/auth/unauthorized` }
+                    { title: "News Category", path: `${basePath}/news/news-category` },
+                    { title: "News", path: `${basePath}/news/list-news` }
                 ]
             },
             {
-                title: "Drafts",
-                path: `${basePath}/drafts`,
-                icon: File
+                title: "Contect Us",
+                path: `${basePath}/contect-us`,
+                icon: MapPinHouse
             },
-            {
-                title: "Sent",
-                path: `${basePath}/sent`,
-                icon: Send
-            }
         ]
     }
 ]
