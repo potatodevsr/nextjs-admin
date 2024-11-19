@@ -1,5 +1,5 @@
 "use client"
-import { MoreHorizontal, ArrowUpDown, Edit, Trash } from "lucide-react"
+import { MoreHorizontal, Edit, Trash } from "lucide-react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 import { Button } from "@/components/ui/button"
