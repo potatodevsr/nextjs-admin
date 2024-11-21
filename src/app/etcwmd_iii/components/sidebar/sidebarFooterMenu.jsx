@@ -56,7 +56,6 @@ export default function SidebarFooterMenu({ user }) {
                                 </div>
                             </div>
                         </DropdownMenuLabel>
-
                         <DropdownMenuGroup>
                             <DropdownMenuItem>
                                 <BadgeCheck />

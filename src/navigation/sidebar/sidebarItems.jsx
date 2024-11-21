@@ -1,45 +1,38 @@
-import {
-    UserCog,
-    MapPinHouse,
-    Newspaper,
-    PanelsTopLeft
-} from "lucide-react"
-
-const basePath = "/dashboard"
+const basePath = "/etcwmd_iii"
 
 export const sidebarItems = [
     {
         id: 1,
-        label: "Overview",
+        // label: "Pages", 
         items: [
             {
-                title: "Dashboard",
-                path: basePath,
-                icon: PanelsTopLeft,
-                isActive: true
-            }
-        ]
-    },
-    {
-        id: 2,
-        label: "Pages",
-        items: [
+                title: "เข้าสู่ระบบ",
+                path: `${basePath}/contect`,
+                icon: "https://icongr.am/entypo/publish.svg?size=125&color=555766"
+            },
             {
-                title: "User Manaments",
+                title: "e-Self Classification",
                 path: "#",
-                icon: UserCog,
+                icon: "https://icongr.am/entypo/archive.svg?size=125&color=555766",
                 subItems: [
-                    { title: "All Users", path: `${basePath}/user-manaments/all-users` },
-                    { title: "Sub Page 2", path: `${basePath}/unauthorized` },
-                    { title: "Sub Page 3", path: `${basePath}/unauthorized` },
-                    { title: "Sub Page 4", path: `${basePath}/unauthorized` }
+                    { title: "การจำแนกสินค้า", path: `${basePath}/classification/news` },
+                    { title: "ตรวจสอบ Cas Number", path: `${basePath}/classification/tcwmd` },
+                    { title: "หน่วยงานที่ควบคุม DUI", path: `${basePath}/classification/user-manual` },
                 ]
             },
             {
-                title: "Contect Us",
-                path: `${basePath}/contect-us`,
-                icon: MapPinHouse
-            },
+                title: "เพิ่มเติม",
+                path: "#",
+                icon: "https://icongr.am/material/cards-heart.svg?size=125&color=555766",
+                subItems: [
+                    { title: "ข่าวสารประชาสัมพันธ์", path: `${basePath}/information/news` },
+                    { title: "ท่องโลก TCWMD", path: `${basePath}/information/tcwmd` },
+                    { title: "คู่มือการใช้งาน", path: `${basePath}/information/user-manual` },
+                    { title: "กฎหมายที่เกี่ยวข้อง", path: `${basePath}/information/lows` },
+                    { title: "ติดต่อเรา", path: `${basePath}/information/contact` },
+                    { title: "Privacy Policy", path: `${basePath}/information/privacy-policy` },
+                ]
+            }
         ]
     }
 ]

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageContainer from '@/components/page-container';
 import { buttonVariants } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
@@ -10,6 +10,7 @@ import { Plus, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import NewsTable from './users-tables';
+import Loader from '@/components/loader-spinner';
 
 async function getUsers() {
     const res = await fetch(
@@ -20,29 +21,33 @@ async function getUsers() {
 }
 
 export default function UsersListingPage() {
+    const [loading, setLoading] = useState(true);
     const [employees, setEmployees] = useState([]);
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [searchValue, setSearchValue] = useState('');
 
-    // Fetch users on mount
-    useState(() => {
-        getUsers().then((data) => {
-            setEmployees(data);
-            setFilteredEmployees(data); // Initialize filteredEmployees with the full list
-        });
+    useEffect(() => {
+        getUsers()
+            .then((data) => {
+                setEmployees(data);
+                setFilteredEmployees(data);
+            })
+            .finally(() => setLoading(false));
     }, []);
 
-    // Handle search input changes
     const handleSearch = (event) => {
         const value = event.target.value.toLowerCase();
         setSearchValue(value);
 
-        // Filter employees based on search input
         const filtered = employees.filter((employee) =>
             employee.name.toLowerCase().includes(value)
         );
         setFilteredEmployees(filtered);
     };
+
+    if (loading) {
+        return <Loader />;
+    }
 
     return (
         <PageContainer scrollable>
@@ -67,7 +72,7 @@ export default function UsersListingPage() {
                         </div>
 
                         <Link
-                            href={'/dashboard/users/add'}
+                            href={'/dashboard/user/add'}
                             className={cn(buttonVariants({ variant: 'default' }))}
                         >
                             <Plus className="mr-2 h-4 w-4" /> Add New
@@ -77,8 +82,6 @@ export default function UsersListingPage() {
                 <Separator />
                 <NewsTable data={filteredEmployees} totalData={filteredEmployees.length} />
             </div>
-
-
         </PageContainer>
     );
 }

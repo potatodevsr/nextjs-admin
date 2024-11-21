@@ -1,0 +1,6 @@
+{
+    "watch": ["pages", "components", "utils"],
+    "ext": "js,jsx,ts,tsx,json",
+    "exec": "next dev"
+  }
+  

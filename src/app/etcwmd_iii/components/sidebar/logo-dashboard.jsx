@@ -17,12 +17,9 @@ export function LogoDashboard({ logo }) {
                     <Image
                         src={activeTeam.logo}
                         alt={activeTeam.name}
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                     />
-                    <div className="grid flex-1 text-left text-sm leading-tight">
-                        <span className="truncate font-semibold">{activeTeam.name}</span>
-                    </div>
                 </SidebarMenuButton>
             </SidebarMenuItem>
         </SidebarMenu>
