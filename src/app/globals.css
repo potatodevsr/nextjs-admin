@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSansThai-Regular.ttf") format("truetype");
+  unicode-range: U+0E00-0E7F; /* Thai character set */
+}
+
+@font-face {
+  font-family: "QuickSand";
+  src: url("./fonts/Quicksand-Medium.ttf") format("truetype");
+}
+
 * {
-  font-family: NotoSans, Quicksand, sans-serif;
+  font-family: NotoSans, QuickSand, sans-serif;
   font-size: 18px;
 }
 
@@ -88,5 +99,69 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+  a {
+    color: #f47f20;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: #2f3690;
+    text-decoration: none;
+  }
+
+  ul li a {
+    color: #f47f20;
+  }
+
+  ul li a:hover {
+    color: #2f3690;
+  }
+
+  h5 {
+    font-size: 0.9rem;
+    margin-block-end: 1.67em;
+  }
+
+  p {
+    color: #757575;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .just-end {
+    display: flex;
+    justify-content: end;
+  }
+
+  .style-1 {
+    text-decoration: none;
+    color: #000;
+
+    .arrow-icon {
+      position: relative;
+      top: 1px;
+      -webkit-transition: -webkit-transform 0.3s ease;
+      transition: -webkit-transform 0.3s ease;
+      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    }
+
+    .arrow-icon--circle {
+      transition: stroke-dashoffset 0.3s ease;
+      stroke-dasharray: 95;
+      stroke-dashoffset: 95;
+    }
+
+    &:hover {
+      .arrow-icon {
+        transform: translate3d(5px, 0, 0);
+      }
+
+      .arrow-icon--circle {
+        stroke-dashoffset: 0;
+      }
+    }
   }
 }

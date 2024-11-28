@@ -6,6 +6,7 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/s
 import Footer from "@/components/footer";
 import { clsx } from "clsx";
 import { LanguageSwitch } from "@/components/language-switch";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export default function Layout({ children }) {
     return (
@@ -21,12 +22,17 @@ export default function Layout({ children }) {
                                 "[&_svg]:size-7 h-[84px] w-[59px]"
                             )} />
                             {/* <Separator orientation="vertical" className="mr-2 h-4" /> */}
-                            <p className="invisible md:visible text-white text-sm">ระบบเทคโนโลยีสารสนเทศเพื่อรองรับระบบการบริหารการค้าสินค้าที่ใช้ได้สองทางของไทย (e-TCWMD)</p>
-                            {/* <Breadcrumbs /> */}
+                            <h3 className="invisible md:visible text-white font-normal">ระบบเทคโนโลยีสารสนเทศเพื่อรองรับระบบการบริหารการค้าสินค้าที่ใช้ได้สองทางของไทย (e-TCWMD)</h3>
                         </div>
                         <LanguageSwitch />
                     </header>
-                    <div className="p-4 pt-0">{children}</div>
+
+                    <div className=" bg-content">
+                        <Breadcrumbs />
+                        <div className="p-4 pt-0">
+                            {children}
+                        </div>
+                    </div>
                     <Footer />
                 </SidebarInset>
             </SidebarProvider>

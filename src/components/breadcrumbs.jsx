@@ -1,4 +1,5 @@
 'use client';
+
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -13,11 +14,13 @@ import { Fragment } from 'react';
 
 export function Breadcrumbs() {
     const items = useBreadcrumbs();
+    // console.log('items', items);
+
     if (items.length === 0) return null;
 
     return (
-        <Breadcrumb>
-            <BreadcrumbList>
+        <Breadcrumb >
+            <BreadcrumbList className="pl-4">
                 {items.map((item, index) => (
                     <Fragment key={item.title}>
                         {index !== items.length - 1 && (

@@ -15,6 +15,11 @@ module.exports = {
 		},
 		extend: {
 			colors: {
+				link: '#f47f20',
+				text: '#f47f20',
+				'link-hover': '#2f3690',
+				marker: '#6B6F82',
+				content: '#f4f5fa',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {
@@ -65,11 +70,22 @@ module.exports = {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			listStyleType: {
+				none: 'none',
+				disc: 'disc',
+				decimal: 'decimal',
+				circle: 'circle',
+				square: 'square'
+			},
+			boxShadow: {
+				card: '0 1px 15px 1px rgba(62, 57, 107, 0.07)',
 			}
 		}
 	},

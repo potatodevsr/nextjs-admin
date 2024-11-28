@@ -1,5 +1,8 @@
 {
-    "watch": ["pages", "components", "utils"],
+    "watch": [
+      "src/app/ectwmd/**/*",
+      "src/components/**/*"
+    ],
     "ext": "js,jsx,ts,tsx,json",
     "exec": "next dev"
   }

@@ -10,8 +10,12 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "icongr.am",
             },
+            {
+                protocol: "https",
+                hostname: "1mediasoft.net",
+            },
         ],
-        dangerouslyAllowSVG: true, // Enable SVG usage
+        dangerouslyAllowSVG: true,
     },
     reactStrictMode: true,
     pageExtensions: ['jsx', 'js'],

@@ -15,6 +15,23 @@ import { useSearchParams } from 'next/navigation';
 import { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
+import Link from 'next/link';
+
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from "@/components/ui/tabs"
 
 export default function UserAuthForm() {
     const [user, setUser] = useState({ user_email: "", user_pw: "" });
@@ -50,55 +67,68 @@ export default function UserAuthForm() {
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="w-full space-y-2"
                 >
-                    <FormField
-                        control={form.control}
-                        name="user_email"
-                        render={() => (
-                            <FormItem>
-                                <FormLabel>Email</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        id="user_email"
-                                        name="user_email"
-                                        type="email"
-                                        required
-                                        value={user.user_email}
-                                        onChange={handleChange}
-                                        placeholder="you@example.com"
-                                        disabled={loading}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
+                    <Tabs defaultValue="login" className="w-[400px]">
+                        <TabsList className="grid w-full grid-cols-2">
+                            <TabsTrigger value="login">เข้าสู่ระบบ</TabsTrigger>
+                            <TabsTrigger value="signup">ขึ้นทะเบียน</TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="login">
+                            <FormField
 
-                    <FormField
-                        control={form.control}
-                        name="user_pw"
-                        render={() => (
-                            <FormItem>
-                                <FormLabel>Password</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        id="user_pw"
-                                        name="user_pw"
-                                        type="password"
-                                        required
-                                        value={user.user_pw}
-                                        onChange={handleChange}
-                                        placeholder="Xbshsd$##@31!"
-                                        disabled={loading}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
+                                control={form.control}
+                                name="user_email"
+                                render={() => (
+                                    <FormItem>
+                                        <FormControl className="mb-3.5">
+                                            <Input
+                                                id="user_email"
+                                                name="user_email"
+                                                type="email"
+                                                required
+                                                value={user.user_email}
+                                                onChange={handleChange}
+                                                placeholder="อีเมล์"
+                                                disabled={loading}
+                                            />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
 
-                    <Button disabled={loading} className="ml-auto w-full" type="submit">
-                        Login
-                    </Button>
+                            <FormField
+                                control={form.control}
+                                name="user_pw"
+                                render={() => (
+                                    <FormItem>
+                                        <FormControl className="mb-3.5">
+                                            <Input
+                                                id="user_pw"
+                                                name="user_pw"
+                                                type="password"
+                                                required
+                                                value={user.user_pw}
+                                                onChange={handleChange}
+                                                placeholder="รหัสผ่าน"
+                                                disabled={loading}
+                                            />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
+                            <Button disabled={loading} className="ml-auto w-full" type="submit">
+                                Login
+                            </Button>
+                        </TabsContent>
+
+                        <TabsContent value="signup">
+                            <a href="/etcwmd_iii/etc_pr_application_drafts" prefetch={false}>
+                            </a>
+                        </TabsContent>
+
+                    </Tabs>
                 </form>
             </Form>
             <div className="relative">
